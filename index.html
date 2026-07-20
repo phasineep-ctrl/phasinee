@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phattharacharin - CV & 3D Interactive Computer Graphics</title>
+    <title>Phasinee - Modern CV</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Prompt:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -15,205 +16,245 @@
         }
 
         body {
-            font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #525659;
+            font-family: 'Outfit', 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #FDEAEA, #F4C4C9);
             display: flex;
             justify-content: center;
-            padding: 40px 15px;
+            padding: 60px 20px;
+            min-height: 100vh;
         }
 
         .resume-container {
             width: 100%;
-            max-width: 1000px;
-            background: #ffffff;
+            max-width: 900px;
+            background-color: #1a1a1a;
+            border-radius: 50px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
             display: flex;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            min-height: 1100px;
-            overflow: hidden;
+            flex-direction: column;
+            gap: 50px;
         }
 
-        /* Left Column */
-        .left-col {
-            width: 38%;
-            background-color: #ffffff;
-            padding: 0;
-            position: relative;
-        }
-
-        .profile-header {
-            position: relative;
-            height: 320px;
-            background: #CDE2F1;
-            border-bottom-right-radius: 50%;
-            margin-bottom: 40px;
+        /* Top Section */
+        .top-section {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            gap: 25px;
+            align-items: stretch;
         }
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 8px solid white;
+        .profile-pic-container {
+            width: 35%;
+            position: relative;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(180deg, #121212 0%, #1d1d1d 100%);
+            border-radius: 40px;
+            padding: 25px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .profile-pic-container img {
+            width: 100%;
+            aspect-ratio: 1;
             object-fit: cover;
-            background-color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            /* Wavy border effect simulated with multiple borders/radiuses */
+            border-top-left-radius: 70px;
+            border-bottom-right-radius: 70px;
+            background: #F8D8DC;
+            box-shadow: -10px 10px 0px rgba(248, 216, 220, 0.2);
         }
 
-        .left-content {
-            padding: 0 35px 40px 35px;
+        .profile-kitty {
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1 / 1;
+            background: radial-gradient(circle at 30% 30%, #ffe8f0 0%, #f6cedf 45%, #f1b7d4 100%);
+            border-radius: 35px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            position: relative;
         }
 
-        .name-box h1 {
-            font-size: 2.2rem;
+        .profile-kitty svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .name-card {
+            width: 65%;
+            background-color: #F8D8DC;
+            border-radius: 40px;
+            border-top-right-radius: 80px;
+            padding: 40px 40px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hello-pill {
+            position: absolute;
+            top: -20px;
+            right: 40px;
+            background: white;
+            color: #1a1a1a;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .name-card h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
             line-height: 1.05;
             margin-bottom: 5px;
-            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #1a1a1a;
         }
 
-        .name-box h1 .first-name {
-            font-weight: 800;
-            color: #2D3748;
+        .name-card h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            color: #333;
         }
 
-        .name-box h1 .last-name {
-            font-weight: 800;
-            color: #6C92B5;
-        }
-
-        .role-title {
-            font-size: 1.05rem;
-            letter-spacing: 2px;
-            color: #2D3748;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #E2E8F0;
-            padding-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .about-me {
-            font-size: 0.95rem;
-            color: #4A5568;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .section-title-left {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #2D3748;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .contact-list {
-            list-style: none;
-        }
-
-        .contact-list li {
+        .contact-info {
             display: flex;
-            align-items: center;
-            margin-bottom: 12px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .contact-pill {
+            background-color: #1a1a1a;
+            color: #F8D8DC;
+            padding: 8px 18px;
+            border-radius: 20px;
             font-size: 0.9rem;
-            color: #4A5568;
-        }
-
-        .contact-icon {
-            background-color: #6C92B5;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 15px;
-            font-size: 0.8rem;
-        }
-
-        /* Right Column */
-        .right-col {
-            width: 62%;
-            background-color: #6C92B5;
-            padding: 60px 45px;
-            color: #ffffff;
-        }
-
-        .section-title-right {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .resume-item {
-            margin-bottom: 25px;
-        }
-
-        .resume-item h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .resume-item .date {
-            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 5px;
-            opacity: 0.9;
         }
 
-        .resume-item p {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            opacity: 0.9;
+        .contact-pill.outline {
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
         }
 
-        .resume-item ul {
-            padding-left: 20px;
+        /* Section Cards */
+        .card {
+            background-color: #F8D8DC;
+            border-radius: 40px;
+            padding: 40px 40px 30px;
+            position: relative;
+            color: #1a1a1a;
+        }
+
+        .section-title {
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            background: white;
+            color: #1a1a1a;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 500;
             margin-top: 5px;
-            font-size: 0.95rem;
-            opacity: 0.9;
         }
 
-        .resume-item ul li {
+        /* Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card-content h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
             margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
-        /* Canvas & Controls */
+        .card-content .date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .card-content ul {
+            list-style-type: none;
+        }
+
+        .card-content ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .skill-item {
+            margin-bottom: 12px;
+        }
+
+        .skill-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .skill-item ul li::before {
+            content: '♥';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.8rem;
+            color: #1a1a1a;
+        }
+
+        /* Canvas Styles */
         .graphics-section {
-            margin-top: 25px;
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         canvas {
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 12px;
-            background: #090d16;
-            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-            margin-bottom: 15px;
+            border-radius: 20px;
+            background: #1a1a1a;
             width: 100%;
-            max-width: 320px;
-            height: auto;
+            max-width: 250px;
             aspect-ratio: 1 / 1;
             cursor: pointer;
+            margin-bottom: 15px;
+            border: 4px solid white;
         }
 
         .controls {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.5);
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 20px;
             font-size: 0.85rem;
             width: 100%;
-            max-width: 400px;
+            font-weight: 600;
         }
 
         .controls p {
@@ -221,27 +262,54 @@
         }
 
         .key {
-            background: rgba(255, 255, 255, 0.8);
-            color: #2D3748;
+            background: #1a1a1a;
+            color: #F8D8DC;
             padding: 2px 6px;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 700;
             font-family: monospace;
             font-size: 0.8em;
         }
 
+        /* Decorative dots */
+        .deco-dot {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #F8D8DC;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .deco-heart {
+            top: -20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .deco-flower {
+            bottom: -20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            font-size: 1.5rem;
+        }
+
         @media (max-width: 768px) {
-            .resume-container {
+
+            .top-section,
+            .grid-container {
                 flex-direction: column;
+                display: flex;
             }
 
-            .left-col,
-            .right-col {
+            .profile-pic-container,
+            .name-card {
                 width: 100%;
-            }
-
-            .profile-header {
-                height: 250px;
             }
         }
     </style>
@@ -249,91 +317,99 @@
 
 <body>
     <div class="resume-container">
-        <!-- Left Column -->
-        <div class="left-col">
-            <div class="profile-header">
-                <!-- Using doraemon.png as profile picture -->
-                <img src="doraemon.png" alt="Profile" class="profile-img">
-            </div>
-
-            <div class="left-content">
-                <div class="name-box">
-                    <h1>
-                        <span class="first-name">PHATTHARACHARIN</span><br>
-                        <span class="last-name">KHAMSITHA</span>
-                    </h1>
+        <!-- Top Section -->
+        <div class="top-section">
+            <div class="profile-pic-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpgr543dyyyN-ubuxoGuVAL1SJek4xoNERT_dlQ-6UvQ&s=10" alt="Hello Kitty Profile" />
+                <div class="deco-dot"
+                    style="bottom: 10px; left: -10px; width: 35px; height: 35px; background: #F8D8DC; color: white;">✖
                 </div>
-
-                <div class="role-title">Computer Science Student</div>
-
-                <p class="about-me">
-                    อายุ 22 ปี (เกิด 14 ธันวาคม 2004)<br><br>
-
-                </p>
-
-                <h2 class="section-title-left">CONTACT</h2>
-                <ul class="contact-list">
-                    <li>
-                        <div class="contact-icon">เบอร์โทรศัพท์</div>
-                        0616041471
-                    </li>
-                    <li>
-                        <div class="contact-icon">อีเมล</div>
-                        phattharacharin.k@ku.th
-                    </li>
-                    <li>
-                        <div class="contact-icon">ที่อยู่</div>
-                        Nakhon Pathom, Thailand
-                    </li>
-                </ul>
+            </div>
+            <div class="name-card">
+                <div class="hello-pill">Hello! My name</div>
+                <h1>Phasinee<br>Petch an</h1>
+                <h2>Computer Science Student</h2>
+                <div class="contact-info">
+                    <div class="contact-pill">092 658 2135</div>
+                    <div class="contact-pill outline">phasinee.p@ku.th</div>
+                </div>
+                <div style="margin-top: 10px; font-weight: 600; font-size: 0.9rem;">
+                    Nakhon Pathom, Thailand
+                </div>
+                <div style="position: absolute; right: 30px; top: 40px; font-size: 1.5rem; color: #1a1a1a;">♥</div>
             </div>
         </div>
 
-        <!-- Right Column -->
-        <div class="right-col">
-            <h2 class="section-title-right">EDUCATION</h2>
-            <div class="resume-item">
-                <p class="date">Present</p>
-                <h3>Kasetsart University Kamphaeng Saen</h3>
-                <p>Bachelor Degree of Computer Science<br>คณะศิลปศาสตร์และวิทยาศาสตร์</p>
+        <!-- About Me -->
+        <div class="card" style="border-top-right-radius: 60px; border-bottom-left-radius: 60px;">
+            <div class="section-title">About Me</div>
+            <div class="deco-dot deco-heart">♥</div>
+            <div class="about-text">
+                อายุ 21 ปี (เกิด 25 พฤษภาคม 2005)<br>
+                กำลังศึกษาในระดับปริญญาตรี คณะศิลปศาสตร์และวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์ (Computer Science)<br>
+                มีความสนใจและเชี่ยวชาญด้าน 3D Interactive Graphics และ Computer Science Algorithms.
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid-container">
+            <!-- Left Column: Skills & Experience -->
+            <div style="display: flex; flex-direction: column; gap: 30px;">
+                <div class="card" style="flex: 1; border-top-left-radius: 80px; border-bottom-left-radius: 80px;">
+                    <div class="section-title">Skills & Algos</div>
+                    <div class="card-content" style="margin-top: 15px;">
+                        <div class="skill-item">
+                            <h4>Raster Graphics Functions</h4>
+                            <ul>
+                                <li>putPixel() - วาดพิกเซลทีละจุด</li>
+                                <li>drawSprite24Bit() - วาด Sprite สี 24-bit (RGB)</li>
+                                <li>3D Ray-Plane Interactive Color Picking</li>
+                            </ul>
+                        </div>
+                        <div class="skill-item" style="margin-top: 30px;">
+                            <h4>3D Perspective Transformation</h4>
+                            <ul>
+                                <li>Translation (X, Y)</li>
+                                <li>3D Rotation Matrix (Pitch, Yaw, Roll)</li>
+                                <li>Ultra Scaling (0.3x - 10.0x)</li>
+                                <li>3D Perspective Ray Casting Backward Mapping</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <h2 class="section-title-right" style="margin-top: 40px;">SKILLS & ALGORITHMS</h2>
-            <div class="resume-item">
-                <h3>Raster Graphics Functions</h3>
-                <ul>
-                    <li>putPixel() - วาดพิกเซลทีละจุด</li>
-                    <li>drawSprite24Bit() - วาด Sprite สี 24-bit (RGB)</li>
-                    <li>3D Ray-Plane Interactive Color Picking</li>
-                </ul>
-            </div>
+            <!-- Right Column: Education & 3D Interactive -->
+            <div style="display: flex; flex-direction: column; gap: 30px;">
+                <div class="card" style="border-top-right-radius: 80px; padding-bottom: 30px;">
+                    <div class="section-title">Education</div>
+                    <div class="deco-dot deco-flower">✿</div>
+                    <div class="card-content" style="margin-top: 15px;">
+                        <h3>Kasetsart University<br>Kamphaeng Saen</h3>
+                        <div class="date">Present</div>
+                        <p style="font-size: 0.95rem; font-weight: 500; line-height: 1.5;">
+                            Bachelor Degree of Computer Science<br>
+                            คณะศิลปศาสตร์และวิทยาศาสตร์<br>
+                        </p>
+                    </div>
+                </div>
 
-            <div class="resume-item">
-                <h3>3D Perspective Transformation</h3>
-                <ul>
-                    <li>Translation (X, Y)</li>
-                    <li>3D Rotation Matrix (Pitch, Yaw, Roll)</li>
-                    <li>Ultra Scaling (0.3x - 10.0x)</li>
-                    <li>3D Perspective Ray Casting Backward Mapping</li>
-                </ul>
-            </div>
-
-            <h2 class="section-title-right" style="margin-top: 40px;">3D INTERACTIVE GRAPHICS</h2>
-            <div class="graphics-section">
-                <canvas id="canvas" width="200" height="200"></canvas>
-
-                <div class="controls">
-                    <p><strong>⌨️ Keyboard Controls</strong></p>
-                    <p><span class="key">W</span> <span class="key">A</span> <span class="key">S</span> <span
-                            class="key">D</span> : เลื่อนตำแหน่ง (Translate)</p>
-                    <p><span class="key">I</span> / <span class="key">K</span> : หมุนพับ 3D ไปข้างหลัง / หน้า (Pitch)
-                    </p>
-                    <p><span class="key">J</span> / <span class="key">L</span> : หมุนหัน 3D ซ้าย / ขวา (Yaw)</p>
-                    <p><span class="key">←</span> / <span class="key">→</span> : หมุน 2D (Roll)</p>
-                    <p><span class="key">↑</span> / <span class="key">↓</span> หรือ <strong>Mouse Wheel</strong> : ย่อ /
-                        ขยาย (Scale)</p>
-                    <p style="margin-top: 8px; color: #FFD700; font-weight: 600;">💡 คลิกที่ Canvas
-                        เพื่อเปิด/ปิดการหมุนอัตโนมัติ!</p>
+                <div class="card" style="flex: 1; border-bottom-right-radius: 80px;">
+                    <div class="section-title">3D Canvas</div>
+                    <div class="graphics-section">
+                        <canvas id="canvas" width="200" height="200"></canvas>
+                        <div class="controls">
+                            <p><strong>⌨️ Keyboard Controls</strong></p>
+                            <p><span class="key">W</span> <span class="key">A</span> <span class="key">S</span> <span
+                                    class="key">D</span> : Move</p>
+                            <p><span class="key">I</span> <span class="key">K</span> : Pitch | <span
+                                    class="key">J</span> <span class="key">L</span> : Yaw</p>
+                            <p><span class="key">←</span> <span class="key">→</span> : Roll | <span class="key">↑</span>
+                                <span class="key">↓</span> : Scale</p>
+                            <p style="margin-top: 8px; color: #1a1a1a; font-size: 0.8rem; font-weight: 800;">💡 Click
+                                Canvas to Auto-Rotate</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -354,22 +430,33 @@
         };
         // 2. วาดรูปด้วยตัวเลข 0, 1, 2, 3 (ทำให้มองเห็นเป็นรูปทรงได้ง่าย)
         const mySprite = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 0, 0, 0],
-            [0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0],
-            [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0],
-            [0, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 1, 0],
-            [0, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 1, 0],
-            [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0],
-            [0, 1, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 1, 0],
-            [0, 1, 3, 3, 1, 2, 2, 2, 2, 2, 2, 1, 3, 3, 1, 0],
-            [0, 1, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 1, 0],
-            [0, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 0],
-            [0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0],
-            [0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 0, 0, 0],
-            [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 2, 2, 1, 0, 0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 2, 2, 2, 2, 1, 1, 2, 3, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 3, 2, 3, 2, 2, 2, 3, 3, 2, 3, 1, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 3, 1, 0, 0, 0, 0, 0, 0],
+            [1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 3, 2, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0],
+            [1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 1, 3, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 3, 3, 1],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 3, 3, 2, 1, 0],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 3, 3, 2, 1, 0],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 3, 3, 2, 1, 0, 0],
+            [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 0, 0, 0],
+            [0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 1, 2, 2, 1, 0, 0, 1, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         ];
 
         let posX = canvas.width / 2;
@@ -380,7 +467,7 @@
         let scale = 3.0;  // ค่าเริ่มต้นใหญ่ขึ้น
         const f = 180;    // Focal Length (ระยะ Perspective กล้อง)
         const keys = {};
-        let isAutoRotating = false;
+        let isAutoRotating = true;
 
         function putPixel(x, y, r, g, b, a = 255) {
             if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height) return;
@@ -396,8 +483,21 @@
                 pixels[i] = r;
                 pixels[i + 1] = g;
                 pixels[i + 2] = b;
-                pixels[i + 3] = 255;
+                pixels[i + 3] = 0;
             }
+        }
+
+        function getColorFromPalette(color) {
+            if (color === null) return null;
+            if (typeof color === 'number') {
+                const paletteColor = palette[color];
+                if (paletteColor === undefined || paletteColor === null) return null;
+                return [(paletteColor >> 16) & 255, (paletteColor >> 8) & 255, paletteColor & 255];
+            }
+            if (Array.isArray(color) && color.length >= 3) {
+                return [color[0], color[1], color[2]];
+            }
+            return null;
         }
 
         // =========================================================
@@ -455,12 +555,9 @@
 
                     if (spriteY >= 0 && spriteY < spriteH && spriteX >= 0 && spriteX < spriteW) {
                         const color = sprite[spriteY][spriteX];
-                        if (color !== null) {
-                            if (typeof color === 'number') {
-                                putPixel(screenX, screenY, (color >> 16) & 255, (color >> 8) & 255, color & 255);
-                            } else if (Array.isArray(color)) {
-                                putPixel(screenX, screenY, color[0], color[1], color[2]);
-                            }
+                        const rgb = getColorFromPalette(color);
+                        if (rgb) {
+                            putPixel(screenX, screenY, rgb[0], rgb[1], rgb[2]);
                         }
                     }
                 }
